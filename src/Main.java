@@ -9,7 +9,7 @@ public class Main {
         Создайте список из 5 целых чисел. Выведите его элементы через пробел.*/
 
         System.out.println("1. Создайте список из 5 целых чисел. Выведите его элементы через пробел.");
-        List<Integer> numList = new ArrayList<Integer>();
+        List<Integer> numList = new ArrayList<>();
         numList.add(10);
         numList.add(7);
         numList.add(42);
@@ -33,7 +33,7 @@ public class Main {
         /*4) Сумма элементов
         Найдите сумму всех чисел в списке*/
         System.out.println("4. Найдите сумму всех чисел в списке");
-        Integer sum = 0;
+        long sum = 0;
         for (Integer num : numList) {
             sum += num;
         }
@@ -41,8 +41,7 @@ public class Main {
         /*5) Подсчёт количества
         Подсчитайте, сколько раз в списке встречается число 7*/
         System.out.println("5. Подсчитайте, сколько раз в списке встречается число 7");
-        Integer cnt = Collections.frequency(numList, 7);
-        System.out.println(cnt);
+        System.out.println(Collections.frequency(numList, 7));
         /*6) Поиск элемента
         Проверьте, содержится ли число 42 в списке*/
         System.out.println("6. Проверьте, содержится ли число 42 в списке");
@@ -66,7 +65,7 @@ public class Main {
         */
         System.out.println("9. Создайте список из массива int[] arr = {1, 2, 3, 4}.");
         int[] arr = {1, 2, 3, 4};
-        List<Integer> newList = new ArrayList<Integer>();
+        List<Integer> newList = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             newList.add(arr[i]);
         }
@@ -85,7 +84,7 @@ public class Main {
         /*11) Создание списка строк и фильтрация
         Создайте список строк. Выведите строки, длина которых больше 5*/
         System.out.println("11. Создайте список строк. Выведите строки, длина которых больше 5");
-        List<String> strList = new LinkedList<String>();
+        List<String> strList = new LinkedList<>();
         strList.add("Test");
         strList.add("Pivchanski");
         strList.add("Test of waters");
@@ -106,7 +105,21 @@ public class Main {
         printList(strList);
         /*13) Объединение двух списков без дубликатов
         Даны два списка. Объедините их в один, не добавляя повторы*/
-
+        System.out.println("13. Даны два списка. Объедините их в один, не добавляя повторы");
+        System.out.println("Первый список:");
+        printList(numList);
+        List<Integer> numList2 = new ArrayList<>();
+        numList2.add(10);
+        numList2.add(7);
+        numList2.add(42);
+        numList2.add(9);
+        numList2.add(95);
+        System.out.println("Второй список:");
+        printList(numList);
+        Set<Integer> set = new LinkedHashSet<>(numList2);
+        set.addAll(numList2);
+        System.out.println("Результат:");
+        System.out.println(set);
         /*14) Сумма только нечётных чисел
         Считайте List<Integer> и посчитайте сумму только нечётных чисел*/
         System.out.println("14. Считайте List<Integer> и посчитайте сумму только нечётных чисел");
@@ -121,7 +134,7 @@ public class Main {
         /*15) Фильтр по первой букве
         Дан список строк. Верните новый список, содержащий только строки, начинающиеся с буквы "А"*/
         System.out.println("15.Дан список строк. Верните новый список, содержащий только строки, начинающиеся с буквы А");
-        List<String> aList = new LinkedList<String>();
+        List<String> aList = new LinkedList<>();
         for (String str : strList) {
             if (str.startsWith("A")) {
                 aList.add(str);
